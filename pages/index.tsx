@@ -13,7 +13,7 @@ export default function Home() {
         <link rel="icon" href="/lovin-logo.png" />
       </Head>
       <main className="flex h-screen w-full items-center justify-center gap-4">
-        <p className="text-base font-normal text-[var(--bg-faint)]">
+        <p className="text-base font-normal text-[var(--label-faint)]">
           We make wonderful things.
         </p>
       </main>
