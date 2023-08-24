@@ -1,12 +1,12 @@
 import { Client } from 'discord.js';
 
-// MARK: Confidential
-const discordToken = 'MTE0NDI1NDIyNTE2MTkyODgxNQ.GBWyWl.qAWLTOYfFFiJ1uSmchFczFipWU6UzxazQGGPrM';
-const discordChannelId = '1143902845112942714';
-
 export default async (req, res) => {
     const discordClient = new Client({ intents: ["Guilds"] });
-    discordClient.login(discordToken);
+    console.log("Discord client created!", discordClient)
+    // MARK: Confidential
+    const discordToken = 'MTE0NDI1NDIyNTE2MTkyODgxNQ.GBWyWl.qAWLTOYfFFiJ1uSmchFczFipWU6UzxazQGGPrM';
+    const discordChannelId = '1143902845112942714';
+    await discordClient.login(discordToken);
     
     if (req.method === 'POST') {
         let event;
