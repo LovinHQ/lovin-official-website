@@ -1,16 +1,13 @@
 import { Client } from 'discord.js';
 
-const discordClient = new Client({ intents: ["Guilds"] });
 // MARK: Confidential
 const discordToken = 'MTE0NDI1NDIyNTE2MTkyODgxNQ.GBWyWl.qAWLTOYfFFiJ1uSmchFczFipWU6UzxazQGGPrM';
 const discordChannelId = '1143902845112942714';
 
-discordClient.login(discordToken);
-discordClient.on('ready', () => {
-    console.log(`Logged in as ${discordClient.user.tag}!`);
-})
-
 export default async (req, res) => {
+    const discordClient = new Client({ intents: ["Guilds"] });
+    discordClient.login(discordToken);
+    
     if (req.method === 'POST') {
         let event;
 
@@ -31,13 +28,17 @@ export default async (req, res) => {
                 const notification = `恭喜发财！🤑 用户购买了产品“${productName}”，你又赚了${amount}元！💰 真棒啊！👍`;
                 console.log(notification);
                 // Send a message to a Discord channel
-                const channel = await discordClient.channels.fetch(discordChannelId);
-                if (channel) {
-                    channel.send(notification);
-                    console.log("Message sent!")
-                } else {
-                    console.log("Channel not found!")
-                }
+                discordClient.on('ready', () => {
+                    console.log(`Logged in as ${discordClient.user.tag}!`);
+                    const channel = discordClient.channels.cache.get(discordChannelId);
+                    console.log(channel);
+                    if (channel) {
+                        channel.send(notification);
+                        console.log("Message sent!")
+                    } else {
+                        console.log("Channel not found!")
+                    }
+                })
                 break;
             default:
                 console.log(`Unhandled event type ${event.type}`);
