@@ -1,16 +1,15 @@
 import { Client } from 'discord.js';
 
-const discordClient = new Client({ intents: ["Guilds"] });
-// MARK: Confidential
-const discordToken = 'MTE0NDI1NDIyNTE2MTkyODgxNQ.GBWyWl.qAWLTOYfFFiJ1uSmchFczFipWU6UzxazQGGPrM';
-const discordChannelId = '1143902845112942714';
-
-discordClient.login(discordToken);
-discordClient.on('ready', () => {
-    console.log(`Logged in as ${discordClient.user.tag}!`);
-})
-
 export default async (req, res) => {
+    const discordClient = new Client({ intents: ["Guilds"] });
+    // MARK: Confidential
+    const discordToken = 'MTE0NDI1NDIyNTE2MTkyODgxNQ.GBWyWl.qAWLTOYfFFiJ1uSmchFczFipWU6UzxazQGGPrM';
+    const discordChannelId = '1143902845112942714';
+    
+    discordClient.login(discordToken);
+    discordClient.on('ready', () => {
+        console.log(`Logged in as ${discordClient.user.tag}!`);
+    })
     if (req.method === 'POST') {
         let event;
 
