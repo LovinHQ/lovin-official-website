@@ -25,7 +25,8 @@ export default async (req, res) => {
                 const charge = event.data.object;
                 const productName = charge.payment_intent === null ? "OpenAIKey" : "书译翻译服务"
                 const amount = charge.amount / 100;
-                const notification = `恭喜发财！🤑 用户购买了产品“${productName}”，你又赚了${amount}元！💰 真棒啊！👍`;
+                const currency = charge.currency;
+                const notification = `恭喜发财！🤑 用户购买了产品“${productName}”，你又赚了${currency === "cny" ? "¥" : "$"}${amount} ${currency.toUpperCase()}！💰 真棒啊！👍`;
                 console.log(notification);
                 // Send a message to a Discord channel
                 discordClient.on('ready', () => {
