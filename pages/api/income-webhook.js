@@ -2,7 +2,6 @@ import { Client } from 'discord.js';
 
 export default async (req, res) => {
     const discordClient = new Client({ intents: ["Guilds"] });
-    console.log("Discord client created!", discordClient)
     // MARK: Confidential
     const discordToken = 'MTE0NDI1NDIyNTE2MTkyODgxNQ.GBWyWl.qAWLTOYfFFiJ1uSmchFczFipWU6UzxazQGGPrM';
     const discordChannelId = '1143902845112942714';
@@ -32,7 +31,6 @@ export default async (req, res) => {
                 discordClient.on('ready', () => {
                     console.log(`Logged in as ${discordClient.user.tag}!`);
                     const channel = discordClient.channels.cache.get(discordChannelId);
-                    console.log(channel);
                     if (channel) {
                         channel.send(notification);
                         console.log("Message sent!")
