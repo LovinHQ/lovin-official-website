@@ -280,17 +280,17 @@ export default function Home() {
                 variants={fadeIn}
                 className="mt-3 text-3xl font-bold text-[var(--label-title)] sm:text-4xl"
               >
-                Small team, big ambition
+                Small team, big vision
               </motion.h2>
               <motion.p
                 custom={2}
                 variants={fadeIn}
                 className="mt-6 max-w-2xl text-lg leading-relaxed text-[var(--label-muted)]"
               >
-                Founded in 2023 and headquartered in Delaware, USA, Lovin Studio
-                is a small but ambitious team building AI-first products. We
-                believe technology should be accessible to everyone and make
-                people's lives easier.
+                Established in 2023 and based in Delaware, USA, Lovin Studio is
+                a passionate and innovative team dedicated to building AI-first
+                products. We believe technology should empower everyone and
+                simplify everyday life.
               </motion.p>
             </motion.div>
           </div>
