@@ -36,12 +36,12 @@ const products = [
     ),
   },
   {
-    name: 'PhotoBetter (Cooking)',
-    tagline: 'AI-powered photography',
+    name: 'Merlin',
+    tagline: 'Your agents, now part of your team',
     description:
-      'Enhance, upscale, and transform your photos with AI. Professional-quality results in seconds — no design skills required.',
-    stats: 'AI Enhancement · Upscaling · One-click editing',
-    // href: 'https://www.photobetter.ai',
+      'Bring Claude Code and Codex agents into Slack, Linear, and GitHub. Delegate work right where your team collaborates — running on your own machines with your existing subscriptions.',
+    stats: 'Slack · Linear · GitHub · No extra model fees',
+    href: 'https://usemerlin.ai',
     icon: (
       <svg
         width="32"
@@ -53,9 +53,14 @@ const products = [
         strokeLinecap="round"
         strokeLinejoin="round"
       >
-        <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
-        <circle cx="9" cy="9" r="2" />
-        <path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21" />
+        <path d="m21.64 3.64-1.28-1.28a1.21 1.21 0 0 0-1.72 0L2.36 18.64a1.21 1.21 0 0 0 0 1.72l1.28 1.28a1.2 1.2 0 0 0 1.72 0L21.64 5.36a1.2 1.2 0 0 0 0-1.72" />
+        <path d="m14 7 3 3" />
+        <path d="M5 6v4" />
+        <path d="M19 14v4" />
+        <path d="M10 2v2" />
+        <path d="M7 8H3" />
+        <path d="M21 16h-4" />
+        <path d="M11 3H9" />
       </svg>
     ),
   },
